@@ -1,0 +1,85 @@
+<svg height="128px" width="128px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <style>
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 0% 50%
+        }
+
+        50% {
+          background-position: 100% 50%
+        }
+
+        100% {
+          background-position: 0% 50%
+        }
+      }
+
+      @keyframes rotateAnimation {
+        0% {
+          transform: rotate(0deg);
+          background-position: center top;
+        }
+
+        50% {
+          transform: rotate(180deg);
+          background-position: center bottom;
+        }
+
+        100% {
+          transform: rotate(360deg);
+          background-position: center top;
+        }
+      }
+      svg {
+          width: 128px;
+      }
+      #favicon-1{
+        content: '';
+        display: block;
+        background: gold;
+        border-radius: 99px;
+        align-self: center;
+        height: 1.2em;
+        width: 1.2em;
+
+        fill: linear-gradient(90deg, gold, pink, salmon, plum, mediumpurple);
+        background-size: 2000% 2000%;
+        animation: gradientAnimation 20s linear infinite;
+        will-change: transform, background-position;
+      }
+
+      #favicon-2 {
+        content: '';
+        display: block;
+        position: absolute;
+        border-radius: 99px;
+        align-self: center;
+        height: 1.2em;
+        width: 1.2em;
+
+        background: radial-gradient(transparent 10%, hotpink);
+        background-size: 300% 300%;
+        background-position: center top;
+        animation: rotateAnimation 10s linear infinite;
+        will-change: transform, background-position;
+      }
+
+    </style>
+    <defs>
+      <linearGradient id="gradient1" x1="-500%" x2="500%">
+        <stop offset="0%" stop-color="gold"></stop>
+        <stop offset="25%" stop-color="pink"></stop>
+        <stop offset="50%" stop-color="salmon"></stop>
+        <stop offset="75%" stop-color="plum"></stop>
+        <stop offset="100%" stop-color="mediumpurple"></stop>
+        <animate attributeName="x1" dur="10s" from="-500%" to="-500%" values="-500%; 0; -500%" keyTimes="0; 0.5; 1" repeatCount="indefinite" />
+        <animate attributeName="x2" dur="10s" from="500%" to="500%" values="500%; 1000%; 500%" keyTimes="0; 0.5; 1" repeatCount="indefinite" />
+      </linearGradient>
+      <radialGradient id="gradient2" fy="90%">
+        <stop offset="10%" stop-color="hotpink"></stop>
+        <stop offset="100%" stop-color="#d9574a"></stop>
+        <animate attributeName="fy" dur="700ms" from="90%" to="0%" repeatCount="indefinite" />
+      </radialGradient>
+  </defs>
+    <circle fill="url(#gradient1)" cx="50" cy="50" r="45"/>
+</svg>

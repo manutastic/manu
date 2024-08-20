@@ -1,0 +1,93 @@
+---
+import Header from "../components/Header.astro";
+import Nav from "../components/Nav.astro";
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Podkova:wght@400..800&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<Header />
+		<Nav />
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--text-base: #4d3559;
+		--text-lighter: #876499;
+		--border-radius: 10px;
+		--background: #f3eef7;
+		--well: #ebe3f2;
+		--shadow: 273, 91%, 23%;
+		--font-body:  "Nunito Sans", Roboto, "Open Sans", Tahoma, Geneva,
+		"Helvetica Neue", Helvetica, Arial, sans-serif;
+		--font-display: "Podkova", "Nunito Sans", Roboto, "Open Sans", Tahoma, Geneva,
+			"Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+	*,
+	*::before,
+	*::after {
+		font-family: var(--font-body);
+		box-sizing: border-box;
+	}
+	html {
+    min-height: 100%;
+    padding: 0 1em 2em;
+    font-size: 16px;
+	}
+	body {
+		max-width: 600px;
+		margin: 0 auto;
+		background: linear-gradient(180deg, #ffffff 0%, var(--background) 40%);
+		color: var(--text-base);
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+	h1,h2,h3,h4,h5,h6 {
+		font-family: var(--font-display);
+		font-weight: 900;
+		margin: 0 0 .2em;
+		color: var(--text-lighter);
+	}
+	p {
+		margin: 0 0 1em;
+	}
+	a {
+		text-decoration: none;
+		color: var(--text-lighter);
+		&:hover {
+			text-decoration-line: underline;
+			text-decoration-thickness: 1px;
+			text-decoration-style: wavy;
+			text-decoration-skip-ink: none;
+		}
+	}
+</style>

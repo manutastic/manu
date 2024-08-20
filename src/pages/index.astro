@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Project from "../components/Project.astro";
+const allProjects = await Astro.glob("../pages/projects/*");
+---
+
+<Layout title="Manu | Projects">
+	<main>
+		<ul role="list" class="link-card-grid">
+			{
+				allProjects.map((project) => (
+					<Project
+						href={project.frontmatter.link}
+						title={project.frontmatter.title}
+						body={project.frontmatter.description}
+						image={project.frontmatter.image}
+					/>
+				))
+			}
+		</ul>
+	</main>
+</Layout>
+
+<style>
+	.link-card-grid {
+		padding: 0;
+		margin: 0;
+	}
+</style>

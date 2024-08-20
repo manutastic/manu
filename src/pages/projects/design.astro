@@ -1,0 +1,186 @@
+---
+import Layout from "../../layouts/Layout.astro";
+export const frontmatter = {
+  title: "Icon design",
+description: "App icon design.",
+image: {
+  url: "/design/eggIcon.png",
+  alt: "Egg icon",
+},
+link: "/projects/design",
+}
+---
+
+<Layout title="Manu | Design">
+  <main>
+    <h1>Icon Design</h1>
+    <p>I ocassionally design icons for my sideprojects&mdash;or just for fun.</p>
+    <div class="grid">
+      <div class="tile w-2" style={{'--background': '#0C0F1D'}}>
+        <img src="/design/mastodonIcons.png" />
+        <span class="caption">
+          <h2>Redesigned Mastodon icons</h2>
+          <p>Made in Figma</p>
+        </span>
+      </div>
+      <div class="tile" style={{'--background': '#030E4F'}}>
+        <img src="/design/arcIcon.png" />
+        <span class="caption">
+          <h2>Arc Browser icon</h2>
+          <p>Made in Blender and Figma</p>
+        </span>
+      </div>
+      <div class="tile" style={{'--background': '#01C0A6'}}>
+        <img src="/design/goodbrief.png" />
+        <span class="caption">
+          <h2>Goodbrief icon</h2>
+          <p>Made in Figma</p>
+        </span>
+      </div>
+      <div class="tile" style={{'--background': '#0978FF'}}>
+        <img src="/design/goodpalette.png" />
+        <span class="caption">
+          <h2>Goodpalette icon</h2>
+          <p>Made in Figma</p>
+        </span>
+      </div>
+      <div class="tile" style={{'--background': '#D43824'}}>
+        <img src="/design/goodassets.png" />
+        <span class="caption">
+          <h2>???</h2>
+          <p>Made in Figma</p>
+        </span>
+      </div>
+      <div class="tile w-2" style={{'--background': '#0C0F1D'}}>
+        <img src="/design/glassIcons.png" />
+        <span class="caption">
+          <h2>Glass material experiments</h2>
+          <p>Made in Blender</p>
+        </span>
+      </div>
+      <div class="tile fill" style={{'--background': '#0C0F1D'}}>
+        <img src="/design/glassIconCloseup.png" />
+        <span class="caption">
+          <h2>Glass material experiments</h2>
+          <p>Made in Blender</p>
+        </span>
+      </div>
+      <div class="tile" style={{'--background': '#01321a'}}>
+        <img src="/design/cardsIcon.png" />
+        <span class="caption">
+          <h2>Cards icon</h2>
+          <p>Made in Figma</p>
+        </span>
+      </div>
+      <div class="tile w-2" style={{'--background': '#0C0F1D'}}>
+        <img src="/design/emoji.png" />
+        <span class="caption">
+          <h2>Custom emoji set</h2>
+          <p>Made in Figma</p>
+        </span>
+      </div>
+      <div class="tile" style={{'--background': '#F8B919'}}>
+        <img src="/design/playdateIcon.png" />
+        <span class="caption">
+          <h2>Playdate-inspired icon</h2>
+          <p>Made in Figma</p>
+        </span>
+      </div>
+      <div class="tile" >
+        <img src="/design/eggIcon.png" />
+        <span class="caption">
+          <h2>Egg icon</h2>
+          <p>Made in Figma</p>
+        </span>
+      </div>
+      <div class="tile">
+        <img src="/design/slackIcon.png" />
+        <span class="caption">
+          <h2>Redesigned Slack icon</h2>
+          <p>Made in Figma</p>
+        </span>
+      </div>
+      <div class="tile">
+        <img src="/design/instagramIcon.png" />
+        <span class="caption">
+          <h2>Retro Instagram icon</h2>
+          <p>Recreated in Figma</p>
+        </span>
+      </div>
+      <div class="tile">
+        <img src="/design/youtubeIcon.png" />
+        <span class="caption">
+          <h2>Retro YouTube app icon</h2>
+          <p>Recreated in Figma</p>
+        </span>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .grid {
+    --background: #DBCEDD;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 12px;
+
+    @media (max-width: 500px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .tile {
+    position: relative;
+    display: flex;
+    background: var(--background);
+    border: 1px solid hsl(from var(--background) h s calc(l * 0.9));
+    border-radius: 10px;
+    align-items: center;
+    padding: 2.5em;
+    overflow: hidden;
+    justify-content: center;
+
+    &.fill {
+      background: none;
+      padding: 0;
+      border: none;
+    }
+
+    &:hover {
+      .caption { 
+        opacity: 1;
+      }
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+  .w-2 {
+    grid-column: span 2;
+  }
+  .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: .5em;
+    opacity: 0;
+    transition: opacity .3s ease;
+    text-shadow: 0 0 1px var(--background), 0 0 2px var(--background), 0 0 3px var(--background), 0 0 4px var(--background);
+    h2, p {
+      font-size: .8em;
+      margin: 0;
+      line-height: 1.2;
+    }
+    h2 {
+      --l: clamp(0.1, (0.5 / calc(l / 100) - 1) * infinity, 0.9);
+      color: hsl(from var(--background) h s calc(var(--l) * 100));
+    }
+    p {
+      --l: clamp(0.3, (0.5 / calc(l / 100) - 1) * infinity, 0.7);
+      color: hsl(from var(--background) h s calc(var(--l) * 100));
+    }
+  }
+</style>
