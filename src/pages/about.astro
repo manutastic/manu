@@ -5,7 +5,16 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Manu | About">
   <main>
     <h1>Manu Oppel del Rio</h1>
-    <p>I'm a software developer from Miami, FL. I enjoy making websites, designing icons and user interfaces, and collecting playing cards. You can follow me on <a href="https://mastodon.social/@manutastic">Mastodon.</a></p>
+    <p>I'm a software developer that enjoys building useful things and solving problems.</p>
+    <p>In my spare time, I like making websites, designing icons and user interfaces, and collecting playing cards.</p>
+    <p>You can follow me on <a href="https://mastodon.social/@manutastic">Mastodon.</a></p>
+
+    <section class="photo-wall">
+      <img src="/assets/IMG_0054.png" alt=""/>
+      <img src="/assets/IMG_8049.png" alt=""/>
+      <img src="/assets/IMG_0026.png" alt=""/>
+      <img src="/assets/IMG_1547.png" alt=""/>
+    </section>
 
     <h2>Colophon</h2>
     <p>This website was made with Astro.</p>
@@ -13,4 +22,22 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style>
+  .photo-wall {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    margin-bottom: 1em;
+    img {
+      border-radius: var(--border-radius);
+      outline: 1px solid hsla(0, 0%, 100%, 0.25);
+      outline-offset: -2px;
+      height: 200px;
+      &:nth-child(odd) {
+        transform: rotateZ(-2deg);
+      }
+      &:nth-child(even) {
+        transform: rotateZ(2deg);
+      }
+    }
+  }
 </style>
