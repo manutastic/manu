@@ -14,7 +14,7 @@ link: "/projects/design",
 <Layout title="Manu | Design">
   <main>
     <h1>Icon Design</h1>
-    <p>I ocassionally design icons for my sideprojects&mdash;or just for fun.</p>
+    <p>I occasionally design icons for my side projects&mdash;or just for fun.</p>
     <div class="grid">
       <div class="tile w-2" style={{'--background': '#0C0F1D'}}>
         <img src="/design/mastodonIcons.png" />
@@ -137,7 +137,7 @@ link: "/projects/design",
     border: 1px solid hsl(from var(--background) h s calc(l * 0.9));
     border-radius: 10px;
     align-items: center;
-    padding: 2.5em;
+    padding: 2.75em;
     overflow: hidden;
     justify-content: center;
 
@@ -173,14 +173,22 @@ link: "/projects/design",
       font-size: .8em;
       margin: 0;
       line-height: 1.2;
+      color: white;
+      
+      @supports (color: oklch(from red l c h)) {
+        --l: clamp(0, (0.7 / l - 1) * infinity, 1);
+        color: oklch(from var(--background) var(--l) 0.2 h);
+        text-shadow: none;
+      }
+      
+      @supports (color: contrast-color(red)) {
+        color: contrast-color(var(--background));
+        text-shadow: none;
+      }
     }
-    h2 {
-      --l: clamp(0.1, (0.5 / calc(l / 100) - 1) * infinity, 0.9);
-      color: hsl(from var(--background) h s calc(var(--l) * 100));
-    }
+
     p {
-      --l: clamp(0.3, (0.5 / calc(l / 100) - 1) * infinity, 0.7);
-      color: hsl(from var(--background) h s calc(var(--l) * 100));
+      opacity: 0.75;
     }
   }
 </style>
