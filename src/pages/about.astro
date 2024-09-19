@@ -5,15 +5,15 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Manu | About">
   <main>
     <h1>Manu Oppel del Rio</h1>
-    <p>I'm a software developer that enjoys building useful things and solving problems.</p>
-    <p>In my spare time, I like making websites, designing icons and user interfaces, and collecting playing cards.</p>
+    <p>I'm a software developer that enjoys building fun things and solving problems.</p>
+    <p>In my spare time, I like making websites, designing icons and user interfaces, walking in nature, taking pictures, and collecting playing cards.</p>
     <p>You can follow me on <a href="https://mastodon.social/@manutastic">Mastodon.</a></p>
 
     <section class="photo-wall">
-      <img src="/assets/IMG_0054.png" alt=""/>
-      <img src="/assets/IMG_8049.png" alt=""/>
-      <img src="/assets/IMG_0026.png" alt=""/>
-      <img src="/assets/IMG_1547.png" alt=""/>
+      <img src="/assets/IMG_0054.jpg" alt=""/>
+      <img src="/assets/IMG_8049.jpg" alt=""/>
+      <img src="/assets/IMG_0026.jpg" alt=""/>
+      <img src="/assets/IMG_1547.jpg" alt=""/>
     </section>
 
     <h2>Colophon</h2>
@@ -26,12 +26,14 @@ import Layout from "../layouts/Layout.astro";
     display: flex;
     gap: 1em;
     justify-content: center;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
+}
     img {
       border-radius: var(--border-radius);
       outline: 1px solid hsla(0, 0%, 100%, 0.25);
       outline-offset: -2px;
       height: 200px;
+      box-shadow: 0 10px 20px var(--shadow);
       &:nth-child(odd) {
         transform: rotateZ(-2deg);
       }
