@@ -22,11 +22,19 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style>
+  main {
+    display: flex;
+    flex-direction: column;
+  }
   .photo-wall {
     display: flex;
     gap: 1em;
     justify-content: center;
     margin-bottom: 2em;
+    width: 100vw;
+    padding: 1em;
+    overflow-x: hidden;
+    align-self: center;
 }
     img {
       border-radius: var(--border-radius);
